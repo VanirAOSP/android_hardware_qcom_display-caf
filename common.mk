@@ -49,10 +49,8 @@ endif
 ifneq ($(TARGET_DISPLAY_INSECURE_MM_HEAP),true)
     common_flags += -DSECURE_MM_HEAP
 endif
-ifeq ($(TARGET_DISPLAY_USE_QCOM_BSP_CAMERA_ABI_HACK),true)
-    common_flags += -DQCOM_BSP_CAMERA_ABI_HACK
-endif
-ifneq ($(filter msm7x30 msm8660,$(TARGET_BOARD_PLATFORM)),)
+
+ifneq ($(filter msm8660 msm7x30 msm7x27a,$(TARGET_BOARD_PLATFORM)),)
     common_flags += -DNO_IOMMU
 endif
 
